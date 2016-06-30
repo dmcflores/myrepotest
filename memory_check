@@ -21,7 +21,7 @@ done
         elif [[ "$c" -gt "$x" && "$w" -gt "$x" ]]; then
                 echo $norm
         elif [[ "$c" -gt "$w" && "$c" -le "$x" ]]; then
-                mail -s "[ "{$d}" memory check-critical]" ${e} <<< $y
+                mail -s "$d memory check-critical" ${e} <<< $y
                 echo $crit
         elif [[ "$w" -le "$x" && "$c" -gt "$w" ]]; then
                 echo $warn
@@ -29,3 +29,5 @@ done
                 echo $usage
         else    echo $usage
         fi
+
+~
