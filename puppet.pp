@@ -1,5 +1,4 @@
 node "your hostname here" {
-
 package { 'vim-enhanced':
         ensure => present,
 }
