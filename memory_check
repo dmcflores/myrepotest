@@ -30,4 +30,3 @@ done
         else    echo $usage
         fi
 
-~
