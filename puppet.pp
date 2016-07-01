@@ -1,4 +1,4 @@
-node "your hostname here" {
+node "alon.internal.chikka.com" {
 package { 'vim-enhanced':
         ensure => present,
 }
@@ -25,7 +25,11 @@ file { '/home/monitor/scripts/':
 exec { 'wget':
         command => '/usr/bin/wget https://raw.githubusercontent.com/dmcflores/myrepotest/master/memory_check -O /home/monitor/scripts/memory_check; chmod +x /home/monitor/scripts/memory_check',
         creates => '/home/monitor/scripts/memory_check',
-   }
+        require => Package['wget'],
+        path   => '/usr/bin:/usr/sbin:/bin',
+        tries => '3',
+        logoutput => 'on_failure',
+}
 file { '/home/monitor/src/':
         ensure => 'directory',
         owner  => 'monitor',
