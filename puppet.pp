@@ -1,4 +1,4 @@
-node "alon.internal.chikka.com" {
+node "your fqdn here" {
 package { 'vim-enhanced':
         ensure => present,
 }
